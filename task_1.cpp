@@ -3,7 +3,7 @@
 
 bool read_massiv(std::fstream& fin, int*& mass, int& item_count)
 {
-    const int min_el_count = 2; //минимальное количество элементов в исходном файле
+    const int min_el_count = 1; //минимальное количество элементов в массиве
     item_count = 0;             //Количество элементов в массиве
 
     while (!fin.eof())
@@ -53,8 +53,8 @@ int main()
 
         int* src1;                  //Исходный массив 1
         int* src2;                  //Исходный массив 2
-        int item_count_1;           //Количество элементов в первом массиве
-        int item_count_2;           //Количество элементов во втором массиве
+        int item_count_1 = 0;       //Количество элементов в первом массиве
+        int item_count_2 = 0;       //Количество элементов во втором массиве
 
 
         if (read_massiv(fin, src1, item_count_1) && read_massiv(fin, src2, item_count_2))
