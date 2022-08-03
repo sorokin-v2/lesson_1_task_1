@@ -3,7 +3,7 @@
 
 bool read_massiv(std::fstream& fin, int*& mass, int& item_count)
 {
-    const int min_el_count = 1; //минимальное количество элементов в массиве
+    const int min_el_count = 3; //минимальное количество элементов в массиве
     item_count = 0;             //Количество элементов в массиве
 
     while (!fin.eof())
