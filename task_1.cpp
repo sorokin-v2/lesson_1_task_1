@@ -3,8 +3,8 @@
 
 bool read_massiv(std::fstream& fin, int*& mass, int& item_count)
 {
-    const int min_el_count = 3; //минимальное количество элементов в массиве
-    item_count = 0;             //Количество элементов в массиве
+    const int min_el_count = 0; //минимальное количество элементов в массиве
+    item_count = min_el_count;  //Количество элементов в массиве
 
     while (!fin.eof())
     {
@@ -65,7 +65,8 @@ int main()
             if (fout.is_open())
             {
                 //Выводим исходные массивы в выходной файл
-                fout << item_count_2 << "\n" << src2[item_count_2 - 1] << " ";
+                fout << item_count_2 << "\n";
+                if(item_count_2 > 0) fout << src2[item_count_2 - 1] << " ";
                 for (int i = 0; i < item_count_2 - 1; ++i)
                 {
                     fout << src2[i] << " ";
@@ -76,7 +77,8 @@ int main()
                 {
                     fout << src1[i] << " ";
                 }
-                fout << item_count_1 << " " << src1[0] << std::endl;
+                if (item_count_1 > 0) fout << item_count_1 << " " << src1[0];
+                fout << std::endl;
                 fout.close();
             }
             delete[] src1;
